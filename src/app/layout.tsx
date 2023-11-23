@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "RIck n Morty",
+  title: "Rick n Morty",
   description: "Developed by TurinoS",
 };
 
