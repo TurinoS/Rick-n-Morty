@@ -1,36 +1,27 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import Character from "./types/Character";
+import { useContext } from "react";
+
 import CharCard from "./components/CharCard";
+import { ContextAPI } from "./context/ContextAPI";
+import Pagination from "./components/Pagination";
 
 export default function Home() {
-  const [data, setData] = useState<Character[]>([]);
-  const [page, setPage] = useState(1);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(
-        `https://rickandmortyapi.com/api/character?page=${page}`
-      );
-      const data = await res.json();
-      setData(data.results);
-    };
-    fetchData();
-  });
+  const { data } = useContext(ContextAPI);
 
   return (
-    <main className="flex min-h-screen items-center justify-between p-24 flex-wrap">
-      <button onClick={() => setPage(page + 1)}>Next page</button>
-      {data.map((character) => (
-        <CharCard
-          key={character.id}
-          id={character.id}
-          name={character.name}
-          image={character.image}
-        />
-      ))}
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-8">
+      <Pagination />
+      <div className="flex flex-wrap gap-10">
+        {data.map((character) => (
+          <CharCard
+            key={character.id}
+            id={character.id}
+            name={character.name}
+            image={character.image}
+          />
+        ))}
+      </div>
     </main>
   );
 }
