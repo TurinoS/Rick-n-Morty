@@ -9,7 +9,6 @@ import {
   useEffect,
 } from "react";
 import Character from "../types/Character";
-import { data } from "autoprefixer";
 
 type ContextAPI = {
   data: Character[];
