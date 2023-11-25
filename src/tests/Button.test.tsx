@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
 import Button from "@/components/Button";
 
@@ -11,12 +12,13 @@ describe("<Button />", () => {
     );
 
     const button = screen.getByRole("button", { name: /next page/i });
+    expect(button).toBeInTheDocument();
   });
 
   it("should call function on button click", () => {
     const fn = jest.fn();
     render(
-      <Button page={1} onClick={fn}>
+      <Button page={2} onClick={fn}>
         Next page
       </Button>
     );

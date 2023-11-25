@@ -37,8 +37,17 @@ export default function ContextApiProvider({
       const res = await fetch(
         `https://rickandmortyapi.com/api/character?page=${page}`
       );
-      const data = await res.json();
-      setData(data.results);
+      const apiData = await res.json();
+
+      const favoritesInLocalStorage = JSON.parse(
+        localStorage.getItem("favorites") || "[]"
+      );
+      const updatedData = apiData.results.map((character: Character) => ({
+        ...character,
+        favorite: favoritesInLocalStorage.includes(character.id),
+      }));
+
+      setData(updatedData);
     };
     fetchData();
   });

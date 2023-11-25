@@ -9,6 +9,7 @@ type Character = {
     name: string;
     url: string;
   };
+  favorite: boolean;
 };
 
 export default Character;
