@@ -11,6 +11,7 @@ export default function CharCard({ character }: CharCardProps) {
         alt={character.name}
         width={200}
         height={200}
+        className="w-[180px] h-auto"
       />
       <div className="flex flex-col gap-2 p-3 w-full relative">
         <h2 className="text-2xl font-bold uppercase pl-1">{character.name}</h2>

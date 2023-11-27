@@ -50,7 +50,7 @@ export default function ContextApiProvider({
       setData(updatedData);
     };
     fetchData();
-  });
+  }, []);
 
   return (
     <ContextAPI.Provider value={{ data, setData, page, setPage }}>

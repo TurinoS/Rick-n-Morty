@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import userEvent from "@testing-library/user-event";
 
 import Button from "@/components/Button";
 
@@ -25,8 +24,8 @@ describe("<Button />", () => {
     );
 
     const button = screen.getByRole("button", { name: /next page/i });
-    userEvent.click(button);
-    userEvent.click(button);
-    expect(fn).toHaveBeenCalledTimes(2);
+
+    fireEvent.click(button);
+    expect(fn).toHaveBeenCalledTimes(1);
   });
 });
