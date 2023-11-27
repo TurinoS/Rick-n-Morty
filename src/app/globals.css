@@ -16,3 +16,7 @@ body {
   color: var(--white);
   background-color: var(--black);
 }
+
+.favCharsDiv {
+  max-height: calc(100vh - 260px);
+}

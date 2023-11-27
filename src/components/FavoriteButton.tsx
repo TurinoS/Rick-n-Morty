@@ -1,38 +1,22 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { ContextAPI } from "@/context/ContextAPI";
 
 import CharCardProps from "@/types/CharcardProps";
 import { FaHeart } from "react-icons/fa";
 
 export default function FavoriteButton({ character }: CharCardProps) {
-  const [favorite, setFavorite] = useState(character.favorite);
+  const { favorites, toggleFavorite } = useContext(ContextAPI);
 
-  const toggleFavorite = () => {
-    const updatedCharacter = { ...character, favorite: !favorite };
-    setFavorite(!favorite);
-
-    // Adiciona ou remove o ID do personagem no Local Storage
-    const favoritesInLocalStorage = JSON.parse(
-      localStorage.getItem("favorites") || "[]"
-    );
-
-    if (!favorite) {
-      favoritesInLocalStorage.push(character.id);
-    } else {
-      const index = favoritesInLocalStorage.indexOf(character.id);
-      if (index !== -1) {
-        favoritesInLocalStorage.splice(index, 1);
-      }
-    }
-
-    localStorage.setItem("favorites", JSON.stringify(favoritesInLocalStorage));
-  };
+  const isFavorite = favorites.some(
+    (favCharacter) => favCharacter.id === character.id
+  );
 
   return (
     <button
       className={`${
-        favorite && "text-[var(--red)]"
+        isFavorite && "text-[var(--red)]"
       } absolute bottom-5 right-6 text-xl`}
-      onClick={toggleFavorite}
+      onClick={() => toggleFavorite(character.id)}
     >
       <FaHeart />
     </button>
