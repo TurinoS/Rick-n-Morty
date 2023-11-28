@@ -13,9 +13,9 @@ export default function SidebarCard({ name, image }: SidebarCardProps) {
         alt={name}
         width={70}
         height={70}
-        className="w-auto h-auto"
+        className="w-auto h-auto rounded-lg"
       />
-      <p className="text-center">{name}</p>
+      <p className="text-center font-bold">{name}</p>
     </div>
   );
 }

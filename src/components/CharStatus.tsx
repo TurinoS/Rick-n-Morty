@@ -3,7 +3,7 @@ import { GoDotFill } from "react-icons/go";
 
 export default function CharStatus({ character }: CharCardProps) {
   return (
-    <p className="flex gap-1 items-center font-bold">
+    <p className="flex items-center font-bold">
       <span
         className={`text-2xl ${
           character.status === "Alive"

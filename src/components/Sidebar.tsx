@@ -8,7 +8,7 @@ export default function Sidebar() {
   const { favorites } = useContext(ContextAPI);
 
   return (
-    <aside className="flex flex-col items-center gap-5 min-h-screen w-64 py-10 px-4 bg-[var(--gray)] fixed top-0 left-0">
+    <aside className="flex flex-col items-center gap-5 min-h-screen w-64 py-6 px-2 bg-[var(--gray)] fixed top-0 left-0">
       <Image
         src={avatar}
         alt="Profile picture"
@@ -18,7 +18,7 @@ export default function Sidebar() {
       />
       <h3 className="font-bold">TurinoS</h3>
       <h3 className="uppercase font-semibold text-lg">Favorite characters</h3>
-      <div className={`grid grid-cols-2 gap-2 overflow-auto favCharsDiv`}>
+      <div className="grid grid-cols-2 gap-3 overflow-auto favCharsDiv shadow-inner p-2 bg-[var(--dark-gray)]">
         {favorites.map((character) => (
           <SidebarCard
             key={character.id}
