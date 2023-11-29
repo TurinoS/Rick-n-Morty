@@ -18,14 +18,17 @@ export default function Sidebar() {
       />
       <h3 className="font-bold">TurinoS</h3>
       <h3 className="uppercase font-semibold text-lg">Favorite characters</h3>
-      <div className="grid grid-cols-2 gap-3 overflow-auto favCharsDiv shadow-inner p-2 bg-[var(--dark-gray)]">
-        {favorites.map((character) => (
-          <SidebarCard
-            key={character.id}
-            name={character.name}
-            image={character.image}
-          />
-        ))}
+      <div className="grid grid-cols-2 gap-3 overflow-auto favCharsDiv shadow-inner p-2 bg-[var(--dark-gray)] transition">
+        {favorites
+          .slice()
+          .reverse()
+          .map((character) => (
+            <SidebarCard
+              key={character.id}
+              name={character.name}
+              image={character.image}
+            />
+          ))}
       </div>
     </aside>
   );

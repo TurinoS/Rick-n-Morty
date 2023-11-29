@@ -7,7 +7,7 @@ import Button from "./Button";
 export default function Pagination() {
   const { page, setPage } = useContext(ContextAPI);
   return (
-    <div className="flex bg-[var(--dark-gray)] rounded-2xl text-[var(--black)] pl-3 gap-5 items-center relative h-10">
+    <div className="flex bg-[var(--dark-gray)] rounded-2xl text-[var(--black)] pl-3 items-center relative h-10">
       <Button onClick={() => (page > 1 ? setPage(page - 1) : {})}>
         <FaArrowLeft />
       </Button>
@@ -95,7 +95,7 @@ export default function Pagination() {
           </Button>
         </div>
       )}
-      <Button onClick={() => (page < 42 ? setPage(page + 1) : {})}>
+      <Button nextPage onClick={() => (page < 42 ? setPage(page + 1) : {})}>
         <FaArrowRight />
       </Button>
     </div>
