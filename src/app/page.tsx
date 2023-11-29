@@ -11,11 +11,11 @@ export default function Home() {
   const { data } = useContext(ContextAPI);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between pl-72 pr-8 py-10 gap-8">
+    <main className="flex min-h-screen flex-col items-center pl-72 pr-8 py-10 gap-8">
       {!data && <h2>Loading data, please wait...</h2>}
       <Pagination />
       <Sidebar />
-      <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+      <div className="grid grid-cols-2 w-full justify-between gap-x-8 gap-y-4">
         {data.map((character) => (
           <CharCard key={character.id} character={character} />
         ))}

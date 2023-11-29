@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
 type ButtonProps = {
-  page: number;
   onClick: () => void;
-  children?: ReactNode;
+  children: ReactNode;
+  page?: number;
 };
 
 export default ButtonProps;
