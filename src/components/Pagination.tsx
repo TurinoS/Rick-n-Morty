@@ -1,5 +1,4 @@
 import { useContext } from "react";
-
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { ContextAPI } from "../context/ContextAPI";
 import Button from "./Button";
@@ -12,7 +11,7 @@ export default function Pagination() {
         <FaArrowLeft />
       </Button>
       {page <= 3 ? (
-        <div className="flex gap-2 items-center">
+        <div className="flex md:gap-2 items-center">
           <Button page={page} onClick={() => setPage(1)}>
             1
           </Button>
@@ -25,7 +24,7 @@ export default function Pagination() {
           <Button page={page} onClick={() => setPage(4)}>
             4
           </Button>
-          <p className="align-text-bottom">. . .</p>
+          <p className="align-text-bottom">||</p>
           <Button page={page} onClick={() => setPage(39)}>
             39
           </Button>
@@ -40,7 +39,7 @@ export default function Pagination() {
           </Button>
         </div>
       ) : page >= 40 ? (
-        <div className="flex gap-2 items-center">
+        <div className="flex md:gap-2 items-center">
           <Button page={page} onClick={() => setPage(1)}>
             1
           </Button>
@@ -53,7 +52,7 @@ export default function Pagination() {
           <Button page={page} onClick={() => setPage(4)}>
             4
           </Button>
-          <p className="align-text-bottom">. . .</p>
+          <p className="align-text-bottom">||</p>
           <Button page={page} onClick={() => setPage(39)}>
             39
           </Button>
@@ -68,11 +67,11 @@ export default function Pagination() {
           </Button>
         </div>
       ) : (
-        <div className="flex gap-2 items-center">
+        <div className="flex md:gap-2 items-center">
           <Button page={page} onClick={() => setPage(1)}>
             1
           </Button>
-          <p className="align-text-bottom">. . .</p>
+          <p className="align-text-bottom">||</p>
 
           <Button page={page} onClick={() => setPage(page - 2)}>
             {page - 2}
@@ -89,7 +88,7 @@ export default function Pagination() {
           <Button page={page} onClick={() => setPage(page + 2)}>
             {page + 2}
           </Button>
-          <p className="align-text-bottom">. . .</p>
+          <p className="align-text-bottom">||</p>
           <Button page={page} onClick={() => setPage(42)}>
             42
           </Button>

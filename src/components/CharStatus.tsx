@@ -3,9 +3,9 @@ import { GoDotFill } from "react-icons/go";
 
 export default function CharStatus({ character }: CharCardProps) {
   return (
-    <p className="flex items-center font-bold">
+    <p className="flex items-center font-bold text-sm md:text-base">
       <span
-        className={`text-2xl ${
+        className={`${
           character.status === "Alive"
             ? "text-[var(--green)]"
             : character.status === "Dead"

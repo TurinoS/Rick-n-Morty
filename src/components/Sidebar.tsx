@@ -22,7 +22,7 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="flex flex-col items-center gap-5 min-h-screen w-64 py-6 px-2 bg-[var(--gray)] fixed top-0 left-0">
+    <aside className="md:flex flex-col items-center gap-5 min-h-screen w-64 py-6 px-2 bg-[var(--gray)] md:fixed top-0 left-0 hidden">
       <Image
         src={avatar}
         alt="Profile picture"

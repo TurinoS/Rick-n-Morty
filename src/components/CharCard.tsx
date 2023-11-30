@@ -11,18 +11,20 @@ export default function CharCard({ character }: CharCardProps) {
         alt={character.name}
         width={200}
         height={200}
-        className="w-[180px] h-auto"
+        className="w-[130px] h-[130px] md:w-[180px] md:h-auto"
       />
-      <div className="flex flex-col gap-2 p-3 w-full relative">
-        <h2 className="text-2xl font-bold uppercase pl-1">{character.name}</h2>
-        <FavoriteButton character={character} />
+      <div className="flex flex-col md:gap-2 md:p-3 p-1 w-full relative">
+        <h2 className="md:text-2xl font-bold uppercase pl-1">
+          {character.name}
+        </h2>
         <CharStatus character={character} />
-        <p className="text-lg pl-1">
+        <p className="text-sm md:text-lg pl-1">
           Origin: <span className="font-semibold">{character.origin.name}</span>
         </p>
-        <p className="text-lg pl-1">
+        <p className="text-sm md:text-lg pl-1">
           Gender: <span className="font-semibold">{character.gender}</span>
         </p>
+        <FavoriteButton character={character} />
       </div>
     </div>
   );
