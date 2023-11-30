@@ -43,6 +43,7 @@ export default function ContextApiProvider({
   const [favorites, setFavorites] = useState<Character[]>([]);
   const [favoritesPage, setFavoritesPage] = useState(false);
   const [page, setPage] = useState(1);
+  const [returnVar, setReturnVar] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,7 +68,7 @@ export default function ContextApiProvider({
       }
     };
     fetchData();
-  }, [page]);
+  }, [page, returnVar]);
 
   useEffect(() => {
     const favoritesInLocalStorage = JSON.parse(
@@ -101,7 +102,7 @@ export default function ContextApiProvider({
 
   const renderAllCharacters = () => {
     setFavoritesPage(false);
-    setPage(page + 1 - 1);
+    setReturnVar(!returnVar);
   };
 
   return (

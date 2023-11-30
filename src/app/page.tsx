@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ContextAPI } from "../context/ContextAPI";
 
 import { MdFavorite } from "react-icons/md";
@@ -11,13 +11,13 @@ import BackButton from "@/components/BackButton";
 import ReturnToTopButton from "@/components/ReturnToTopButton";
 
 export default function Home() {
-  const { data, favoritesPage } = useContext(ContextAPI);
+  const { data, favoritesPage, renderFavorites } = useContext(ContextAPI);
 
   return (
     <main className="flex min-h-screen flex-col items-center p-2 md:pl-72 md:pr-8 py-10 gap-4 md:gap-8 relative">
       <button
-        className="bg-[var(--red)] p-1 text-2xl rounded fixed top-2 left-2 z-10 md:hidden"
-        onClick={() => {}}
+        className="bg-[var(--red)] p-1 text-2xl rounded fixed top-2 left-2 z-20 md:hidden"
+        onClick={renderFavorites}
       >
         <MdFavorite />
       </button>
