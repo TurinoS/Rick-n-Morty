@@ -17,6 +17,9 @@ type ContextAPI = {
   setPage: Dispatch<SetStateAction<number>>;
   toggleFavorite: (id: number) => void;
   favorites: Character[];
+  renderFavorites: () => void;
+  favoritesPage: boolean;
+  renderAllCharacters: () => void;
 };
 
 export const ContextAPI = createContext<ContextAPI>({
@@ -26,6 +29,9 @@ export const ContextAPI = createContext<ContextAPI>({
   setPage: () => {},
   toggleFavorite: () => {},
   favorites: [],
+  renderFavorites: () => {},
+  favoritesPage: false,
+  renderAllCharacters: () => {},
 });
 
 export default function ContextApiProvider({
@@ -35,6 +41,7 @@ export default function ContextApiProvider({
 }) {
   const [data, setData] = useState<Character[]>([]);
   const [favorites, setFavorites] = useState<Character[]>([]);
+  const [favoritesPage, setFavoritesPage] = useState(false);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -84,9 +91,32 @@ export default function ContextApiProvider({
     });
   };
 
+  const renderFavorites = () => {
+    const favoritesInLocalStorage = JSON.parse(
+      localStorage.getItem("favorites") || "[]"
+    );
+    setData(favoritesInLocalStorage);
+    setFavoritesPage(true);
+  };
+
+  const renderAllCharacters = () => {
+    setFavoritesPage(false);
+    setPage(page + 1 - 1);
+  };
+
   return (
     <ContextAPI.Provider
-      value={{ data, setData, page, setPage, toggleFavorite, favorites }}
+      value={{
+        data,
+        setData,
+        page,
+        setPage,
+        toggleFavorite,
+        favorites,
+        renderFavorites,
+        favoritesPage,
+        renderAllCharacters,
+      }}
     >
       {children}
     </ContextAPI.Provider>
