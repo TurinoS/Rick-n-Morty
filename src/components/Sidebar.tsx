@@ -1,11 +1,25 @@
 import { ContextAPI } from "@/context/ContextAPI";
-import { useContext } from "react";
+import { FocusEvent, useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import avatar from "../../public/profile-picture.png";
 import SidebarCard from "./SidebarCard";
 
 export default function Sidebar() {
   const { favorites, renderFavorites } = useContext(ContextAPI);
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    const storedUserName = localStorage.getItem("userName");
+    if (storedUserName) {
+      setUserName(storedUserName);
+    }
+  }, []);
+
+  const handleUserNameBlur = (e: FocusEvent<HTMLInputElement>) => {
+    const newUserName = e.target.value;
+    localStorage.setItem("userName", newUserName);
+    setUserName(newUserName);
+  };
 
   return (
     <aside className="flex flex-col items-center gap-5 min-h-screen w-64 py-6 px-2 bg-[var(--gray)] fixed top-0 left-0">
@@ -16,9 +30,20 @@ export default function Sidebar() {
         height={75}
         className="rounded-full"
       />
-      <h3 className="font-bold">TurinoS</h3>
+      {userName ? (
+        <h3 onClick={() => setUserName("")} className="font-bold text-lg">
+          {userName}
+        </h3>
+      ) : (
+        <input
+          type="text"
+          placeholder="Insert your name"
+          className="px-2 text-[var(--black)] rounded font-semibold text-center"
+          onBlur={(e) => handleUserNameBlur(e)}
+        />
+      )}
       <h3
-        className="uppercase font-semibold text-lg cursor-pointer hover:text-[var(--light-blue)] transition duration-200"
+        className="uppercase font-semibold text-xl cursor-pointer hover:text-[var(--light-blue)] transition duration-200"
         onClick={renderFavorites}
       >
         Favorite characters

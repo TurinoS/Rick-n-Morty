@@ -9,7 +9,7 @@ import Sidebar from "@/components/Sidebar";
 import BackButton from "@/components/BackButton";
 
 export default function Home() {
-  const { data, favoritesPage, renderAllCharacters } = useContext(ContextAPI);
+  const { data, favoritesPage } = useContext(ContextAPI);
 
   return (
     <main className="flex min-h-screen flex-col items-center pl-72 pr-8 py-10 gap-8">
