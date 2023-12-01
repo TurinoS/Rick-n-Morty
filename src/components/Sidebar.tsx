@@ -43,7 +43,7 @@ export default function Sidebar() {
         />
       )}
       <h3
-        className="uppercase font-semibold text-xl cursor-pointer hover:text-[var(--light-blue)] transition duration-200"
+        className="uppercase underline font-semibold text-xl cursor-pointer hover:text-[var(--light-blue)] transition duration-200"
         onClick={renderFavorites}
       >
         Favorite characters

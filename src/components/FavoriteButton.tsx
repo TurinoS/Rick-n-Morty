@@ -15,7 +15,7 @@ export default function FavoriteButton({ character }: CharCardProps) {
     <button
       className={`${
         isFavorite && "text-[var(--red)]"
-      } absolute bottom-5 right-6 text-xl hover:scale-125 hover:text-[var(--red)] transition duration-300`}
+      } absolute bottom-5 right-6 text-xl hover:scale-125 transition duration-300`}
       onClick={() => toggleFavorite(character.id)}
     >
       <FaHeart />

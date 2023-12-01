@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ContextAPI } from "../context/ContextAPI";
 
 import { MdFavorite } from "react-icons/md";
