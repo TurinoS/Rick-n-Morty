@@ -2,7 +2,7 @@ import { ContextAPI } from "@/context/ContextAPI";
 import { FocusEvent, useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import avatar from "../../public/profile-picture.png";
-import SidebarCard from "./SidebarCard";
+import CharCardSidebar from "./CharCardSidebar";
 
 export default function Sidebar() {
   const { favorites, renderFavorites } = useContext(ContextAPI);
@@ -56,7 +56,7 @@ export default function Sidebar() {
           .slice()
           .reverse()
           .map((character) => (
-            <SidebarCard
+            <CharCardSidebar
               key={character.id}
               name={character.name}
               image={character.image}

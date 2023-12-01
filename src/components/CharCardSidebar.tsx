@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-type SidebarCardProps = {
+type CharCardSidebarProps = {
   name: string;
   image: string;
 };
 
-export default function SidebarCard({ name, image }: SidebarCardProps) {
+export default function CharCardSidebar({ name, image }: CharCardSidebarProps) {
   return (
     <div className="flex flex-col items-center">
       <Image
