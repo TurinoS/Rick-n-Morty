@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rick n Morty
+## Projeto realizado com o intuito de praticar a implementação de testes unitários.
 
-## Getting Started
+### Você pode ver o projeto em funcionamento [AQUI](https://rick-n-morty-git-main-turinos.vercel.app/)
 
-First, run the development server:
+### 🎯 Proposta:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Primeiro projeto em que usei Jest e React Testing Library para realizar testes e garantir a qualidade do meu código. Além disso pratiquei o uso do Next.js com TypeScript e Tailwind CSS para aprimorar a apresentação de um site com uma interface amigável e intuitiva para o usuário.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trata-se de uma página que se utiliza da The Rick and Morty API para fornecer ao usuário uma lista dos personagens da série onde o usuário pode favoritar os personagens para facilitar suas buscas futuras.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+### 🛠 Tecnologias utilizadas:
+
++ Next.js
++ TypeScript
++ Tailwind CSS
++ Jest
++ React Testing Library
++ Context API
+
+### ☑️ Para rodar você precisará:
+
+ + Editor de código de sua preferência (recomendado VS Code)
+ + Git
+ + Gerenciador de pacotes Yarn ou NPM
+
+### 📝 Procedimentos de instalação
+
+Clone este repositório usando o comando:
+
+```
+https://github.com/TurinoS/Rick-n-Morty.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Na pasta do projeto instale as dependências com uso do npm ou yarn
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+ou
 
-## Learn More
+yarn install
+```
+Inicie o projeto com
 
-To learn more about Next.js, take a look at the following resources:
+```
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ou
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+yarn dev
+```
 
-## Deploy on Vercel
+### 😎 Minhas redes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
++ Linkedin - [paulo-turino](https://www.linkedin.com/in/paulo-turino/)
++ GitHub - [TurinoS](https://github.com/TurinoS)
++ Instagram - [@paulo_turino](https://www.instagram.com/paulo_turino/)
