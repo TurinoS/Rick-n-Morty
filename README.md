@@ -31,7 +31,7 @@
 Clone este repositório usando o comando:
 
 ```
-https://github.com/TurinoS/Rick-n-Morty.git
+git clone https://github.com/TurinoS/Rick-n-Morty.git
 ```
 
 Na pasta do projeto instale as dependências com uso do npm ou yarn
