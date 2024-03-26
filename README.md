@@ -1,6 +1,5 @@
 # Rick n Morty
-
-## Projeto realizado com o intuito de praticar a implementação de testes unitários.
+Projeto realizado com o intuito de praticar a implementação de testes unitários.
 
 ![Imagem do site Rick and Morty](./public/readme-img.jpg)
 
